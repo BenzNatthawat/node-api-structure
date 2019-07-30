@@ -23,6 +23,7 @@
     "rimraf": "^2.6.3"
   },
   "dependencies": {
+    "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
