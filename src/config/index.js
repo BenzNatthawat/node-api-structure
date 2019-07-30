@@ -15,12 +15,12 @@ const conf = {
       name: pjson.name,
       version: pjson.version,
     },
-    port: process.env.AUTHENAPP_PORT,
-    webDomain: process.env.AUTHENAPP_DOMAIN,
-    secretKey: process.env.SECRETKEY,
+    port: process.env.AUTHENAPP_PORT || 3000,
+    webDomain: process.env.AUTHENAPP_DOMAIN || 'localhost',
+    secretKey: process.env.SECRETKEY || 'demo_secret_key',
     db: {
-      uri: process.env.AUTHENAPP_MONGODB_URI,
-      dbname: process.env.AUTHENAPP_MONGODB_DATABASENAME
+      uri: process.env.AUTHENAPP_DB_URI,
+      dbname: process.env.AUTHENAPP_DB_DATABASENAME
     },
     apiName: 'api'
   },
