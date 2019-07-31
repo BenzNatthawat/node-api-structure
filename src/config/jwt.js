@@ -6,7 +6,8 @@ const jwt = () => {
     secret
   }).unless({
     path: [
-      `/api/users`
+      /^\/api\/users/,
+      /^\/api\/users\/.*/,
     ]
   })
 }
