@@ -3,12 +3,18 @@ import userService from './user.service'
 
 const router = express.Router()
 
-const getAll = (req, res, next) => {
-  userService.getAll(req)
+const index = (req, res, next) => {
+  userService.getAll()
     .then(users => res.json(users))
     .catch(err => next(err))
 }
 
-router.get('/', getAll)
-.get('/:id', getAll)
+const show = (req, res, next) => {
+  userService.getOne(req)
+    .then(users => res.json(users))
+    .catch(err => next(err))
+}
+
+router.get('/', index)
+  .get('/:id', show)
 module.exports = router
