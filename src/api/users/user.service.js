@@ -59,7 +59,7 @@ const token = jwt.sign({
   iat: Math.floor(Date.now() / 1000)
 }, config.secretKey)
 
-async function getAll() {
+async function indexUser() {
   const exp = Math.floor(Date.now() / 1000) + (24 * 3600)
   const date = Date.now() / 1000
   const time = 24 * 3600
@@ -67,12 +67,12 @@ async function getAll() {
   return {exp, date, time, users}
 }
 
-async function getOne(req) {
+async function showUser(req) {
   const { id: params } = req.params
   return users.filter((user) => user.id === params)
 }
 
 export default {
-  getAll,
-  getOne
+  indexUser,
+  showUser
 }
