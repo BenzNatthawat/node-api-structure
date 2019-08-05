@@ -4,7 +4,7 @@ import userService from './user.service'
 const router = express.Router()
 
 const index = (req, res, next) => {
-  userService.indexUser()
+  userService.getUsers()
     .then(users => res.json(users))
     .catch(err => next(err))
 }
@@ -38,6 +38,6 @@ router.get('/', index)
   .post('/store', store)
   .get('/:id', show)
   .get('/:id/edit', edit)
-  .patch('/:id/update', update)
-  .delete('/:id/destroy', destroy)
+  .patch('/:id', update)
+  .delete('/:id', destroy)
 module.exports = router
